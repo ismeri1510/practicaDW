@@ -1,47 +1,58 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+<script setup></script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <main class="contenedor">
+    <h1>Notas Rápidas</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+    <section class="formulario-nota">
+      <input type="text" placeholder="Título de la nota" />
 
-  <main>
-    <TheWelcome />
+      <textarea placeholder="Escribe tu nota aquí..."></textarea>
+
+      <button>Guardar nota</button>
+    </section>
+
+    <section class="lista-notas">
+      <h2>Mis notas</h2>
+
+      <p>No hay notas guardadas todavía.</p>
+    </section>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.contenedor {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h1 {
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.formulario-nota {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+input,
+textarea {
+  padding: 12px;
+  font-size: 16px;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+textarea {
+  min-height: 120px;
+}
+
+button {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.lista-notas {
+  margin-top: 30px;
 }
 </style>
